@@ -1,38 +1,556 @@
-.App {
-  text-align: center;
+body {
+  height: fit-content;
+  margin: 0;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.home {
+  padding-top: 2vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.727), rgba(0, 0, 0, 0.815)),
+    url("../public/images/orange.jpg");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo p {
+  font-size: 0.8rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo img {
+  width: 15px;
+  height: 15px;
+}
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  width: calc(90% - 10px);
+  margin: auto;
+  background-color: #7e6f6a96;
+  border-radius: 10px;
+  height: 30px;
+  padding-inline: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-bar .links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.nav-bar .links a {
+  padding: 5px;
+  padding-inline: 15px;
+  width: fit-content;
+  text-decoration: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 0.7rem;
+  transition: all 0.7s ease;
+}
+.nav-bar .links a:hover {
+  background-color: #cdcbcb;
+  color: black;
+}
+
+.nav-bar .logo {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+}
+.home-hero {
+  padding-bottom: 55vh;
+  width: 90%;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.home-hero h1 {
+  text-align: center;
+  color: white;
+  margin: 0;
+  margin-top: 20vh;
+  font-size: 1.7rem;
+}
+.home-hero p {
+  color: white;
+  opacity: 0.6;
+
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.search-bar {
+  width: 70%;
+  height: 30px;
+  margin: auto;
+  margin-top: 2vh;
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 1px 1px 4px #b4b2b2e0;
+}
+
+.search-bar input {
+  position: absolute;
+  width: calc(100% - 5px);
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  padding: 0%;
+  z-index: 2;
+  border: none;
+  border-radius: 20px;
+  padding-left: 5px;
+  background-color: #dfd7d1d1;
+}
+
+.search-bar button {
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  top: 0px;
+  right: 0px;
+  z-index: 4;
+  border-radius: 20px;
+  border: none;
+  background-color: #ca6e4f;
+  color: white;
+  font-weight: 500;
+  transition: all 0.7s ease;
+}
+
+.search-bar button:hover,
+.random-recommendation-button:hover,
+.view-anime-button:hover,
+.recommendation-button:hover {
+  transform: scale(1.1);
+}
+.random-recommendation-button {
+  color: white;
+  background-color: transparent;
+  padding: 8px;
+  border-radius: 20px;
+  border: 2px solid white;
+  margin-top: 1vh;
+  font-weight: 500;
+  opacity: 0.7;
+  transition: all 0.7s ease;
+}
+.home-body {
+  background-image: url(../public/images/wavey-fingerprint.svg);
+  padding-block: 10vh;
+}
+.phone-and-magnify {
+  position: relative;
+}
+.phone {
+  width: 40%;
+  margin-right: 8%;
+}
+
+.magnify {
+  width: 30px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  animation: magnifying-spin 10s ease infinite;
+}
+
+.home-section-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.7rem;
+  text-align: center;
+  width: 80%;
+  border: 0.5px solid #7e6f6a96;
+  border-radius: 20px;
+  background-color: black;
+  margin: auto;
+  padding: 10px;
+
+  padding-block: 30px;
+  color: #cdcbcb;
+  font-size: 0.8rem;
+  text-align: center;
+  gap: 20px;
+}
+
+.home-section-1 p,
+.home-section-2 p {
+  max-width: 65ch;
+  margin: auto;
+}
+
+.home-section-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  width: 80%;
+  margin: auto;
+  margin-top: 10vh;
+  color: #cdcbcb;
+  background-color: black;
+  padding: 10px;
+  padding-block: 30px;
+  border: 0.5px solid #7e6f6a96;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+.anime-images {
+  display: flex;
+  justify-content: space-around;
+}
+.anime-images img {
+  width: 15vw;
+  aspect-ratio: 1/1;
+}
+.search,
+.recommendations-container {
+  min-height: 100vh;
+  padding-top: 2vh;
+  background: url(../public/images/wavey-fingerprint.svg);
+
+  background-size: contain;
+  padding-bottom: 4vh;
+}
+.search .nav-bar,
+.recommendations-container .nav-bar {
+  background-color: #ada8a765;
+  backdrop-filter: blur(5px);
+}
+.search-hero {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  margin-top: 10vh;
+  flex-direction: column;
+  align-items: center;
+}
+.search-hero img {
+  width: 40px;
+  padding-bottom: 5px;
+}
+
+.search-hero h1 {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+.search-label {
+  display: flex;
+  margin-right: 4vw;
+  align-items: center;
   color: white;
 }
+.search-hero .search-bar {
+  height: 25px;
+  width: 70%;
+  margin-top: 1vh;
+}
+.search-results-container,
+.recommendations-results-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  flex-direction: column;
+  gap: 30px;
+}
+.search-results {
+  margin-top: 20vh;
+  color: white;
+  font-size: 0.7rem;
 
-.App-link {
-  color: #61dafb;
+  padding: 5px;
+  border-left: 1px solid #918c8b65;
+
+  width: fit-content;
+  margin-left: 5vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.search-entry {
+  color: white;
+  display: flex;
+  gap: 5px;
+  width: 90%;
+  height: 350px;
+  margin: auto;
+  background-color: #211b1a;
+  padding: 5px;
+
+  border-radius: 10px;
+}
+
+.search-entry .details {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: space-around;
+}
+
+.search-entry img {
+  width: 40%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.search-entry .synopsis {
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+.search-entry .metrics {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  gap: 5px;
+  height: 50px;
+  margin-block: 15px;
+}
+.metrics-label {
+  font-size: 0.7rem;
+}
+.score,
+.episodes,
+.release-date {
+  width: 33%;
+  background: linear-gradient(to bottom right, #7e6f6a, #d46039);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 5px;
+}
+.score p,
+.episodes p,
+.release-date p {
+  margin: 0;
+  padding-top: 2px;
+  text-align: center;
+}
+
+.entry-title {
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.genre-demographic-label {
+  font-size: 0.6rem;
+  margin: 0;
+  text-align: center;
+}
+.genre-demographic {
+  font-size: 0.7rem;
+  color: #ca6e4f;
+  margin: 0;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.recommendation-button,
+.view-anime-button {
+  padding: 8px;
+  color: white;
+  background-color: #d46039;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  transition: all 0.7s ease;
+}
+.recommendation-button {
+  padding: 5px;
+}
+
+.synopsis {
+  text-align: center;
+}
+.recommendations-results-container .search-entry {
+  height: 200px;
+}
+.recommendations-container .details {
+  gap: 20px;
+  justify-content: center;
+}
+
+.recommendations-results-container {
+  margin-top: 10vh;
+  gap: 10px;
+}
+
+.selectedForRecommending {
+  width: 90%;
+  margin: auto;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 10vh;
+}
+
+.selectedForRecommending p {
+  text-align: right;
+  margin: 0px;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+}
+.selectedForRecommending img {
+  width: 20%;
+  max-width: 100px;
+  border-radius: 10px;
+  aspect-ratio: 1/1;
+}
+.selectedForRecommending h2 {
+  text-align: right;
+  margin: 0px;
+  margin-bottom: 2vh;
+  font-size: 1.4rem;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) {
+  .search-bar,
+  .search-hero .search-bar {
+    width: 50%;
   }
-  to {
-    transform: rotate(360deg);
+  .nav-bar,
+  .search-results-container,
+  .recommendations-results-container {
+    width: 80%;
+  }
+  .home-hero h1 {
+    font-size: 1.9rem;
+  }
+  .home-section-1,
+  .home-section-2 {
+    font-size: 0.9rem;
+  }
+  .anime-images img {
+    width: 10vw;
+  }
+  .entry-title {
+    font-size: 1.3rem;
+  }
+  .genre-demographic-label {
+    font-size: 0.7rem;
+  }
+  .genre-demographic {
+    font-size: 0.9rem;
+  }
+  .search-entry .synopsis {
+    font-size: 0.8rem;
+  }
+
+  .score,
+  .episodes,
+  .release-date {
+    width: 30%;
+  }
+  .selectedForRecommending h2 {
+    font-size: 1.4rem;
+  }
+  .selectedForRecommending p {
+    font-size: 1rem;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) {
+  .search-bar,
+  .search-hero .search-bar {
+    width: 40%;
+  }
+  .nav-bar {
+    width: 70%;
+  }
+  .home-hero h1 {
+    font-size: 2rem;
+  }
+  .anime-images img {
+    width: 7vw;
+  }
+  .home-section-1,
+  .home-section-2 {
+    width: 50%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+  .search-bar,
+  .search-hero .search-bar {
+    width: 30%;
+  }
+
+  .home-hero h1 {
+    font-size: 2.5rem;
+  }
+  .home-hero p {
+    font-size: 1rem;
+  }
+  .home-section-1,
+  .home-section-2 {
+    width: 45%;
+    font-size: 1rem;
+  }
+  .search-results-container,
+  .recommendations-results-container {
+    flex-direction: row;
+    gap: none;
+    width: 70%;
+  }
+  .search-entry {
+    width: 45%;
+  }
+  .entry-title {
+    font-size: 1.1rem;
+  }
+  .genre-demographic-label {
+    font-size: 0.6rem;
+  }
+  .genre-demographic {
+    font-size: 0.7rem;
+  }
+  .search-entry .synopsis {
+    font-size: 0.7rem;
+  }
+
+  .score,
+  .episodes,
+  .release-date {
+    width: 30%;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .search-bar {
+    width: 25%;
+  }
+  .nav-bar {
+    width: 60%;
+  }
+}
+
+@keyframes magnifying-spin {
+  0%,
+  100% {
+    left: 50%;
+    top: 50%;
+  }
+  25% {
+    left: 45%;
+    top: 65%;
+  }
+  50% {
+    left: 55%;
+    top: 60%;
+  }
+  75% {
+    left: 60%;
+    top: 75%;
   }
 }
