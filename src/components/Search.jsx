@@ -20,9 +20,8 @@ export default function Search() {
         </div>
         <SearchBar />
       </div>
-
+      <p className="search-results">Search results</p>
       <div className="search-results-container">
-        <p className="search-results">Search results</p>
         {isThereData
           ? location.state.searchResults.data.map((item, index) => {
               //put all genre related entries in an array
@@ -54,6 +53,7 @@ export default function Search() {
             })
           : null}
       </div>
+      <a className="svg-background" href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/">Free SVG Backgrounds and Patterns by SVGBackgrounds.com</a>
     </div>
   );
 }

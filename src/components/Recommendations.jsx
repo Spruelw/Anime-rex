@@ -64,6 +64,7 @@ export default function Recommendations() {
           </div>
         </>
       ) : null}
+      <a className="svg-background" href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/">Free SVG Backgrounds and Patterns by SVGBackgrounds.com</a>
     </div>
   );
 }
