@@ -23,7 +23,6 @@ body {
   justify-content: space-between;
   width: calc(90% - 10px);
   margin: auto;
-  background-color: #7e6f6a96;
   border-radius: 10px;
   height: 30px;
   padding-inline: 10px;
@@ -31,7 +30,6 @@ body {
 
 .nav-bar .links {
   display: flex;
-  gap: 10px;
   align-items: center;
   text-decoration: none;
   margin-right: 20px;
@@ -217,11 +215,7 @@ text-align: center;
   padding-bottom: 4vh;
 }
 
-.search .nav-bar,
-.recommendations-container .nav-bar {
-  background-color: #ada8a765;
-  backdrop-filter: blur(5px);
-}
+
 .search-hero {
   display: flex;
   width: 90%;
@@ -262,10 +256,8 @@ text-align: center;
   margin-top: 20vh;
   color: white;
   font-size: 0.7rem;
-
   padding: 5px;
   border-left: 1px solid #918c8b65;
-
   width: fit-content;
   margin-left: 15%;
 }
