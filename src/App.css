@@ -43,7 +43,7 @@ body {
   border-radius: 10px;
   color: white;
   font-size: 0.7rem;
-  font-weight 300;
+  font-weight: 300;
   transition: all 0.7s ease;
 }
 .nav-bar .links a:hover {
