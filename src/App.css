@@ -69,7 +69,7 @@ body {
   text-align: center;
   color: white;
   margin: 0;
-  margin-top: 20vh;
+  margin-top: 15vh;
   font-size: 1.7rem;
 }
 .home-hero p {
@@ -84,7 +84,7 @@ body {
   width: 70%;
   height: 30px;
   margin: auto;
-  margin-top: 4vh;
+  margin-top: 20vh;
   position: relative;
   border-radius: 20px;
   box-shadow: 1px 1px 4px #b4b2b2e0;
